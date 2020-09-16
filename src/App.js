@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Square from './components/Square'
 import tree from './assets/tree-solid.svg'
 import question from './assets/question-solid.svg'
+import treasure from './assets/gem-solid.svg'
+import Counter from './components/Counter'
 import './App.css'
 
 class App extends Component{
@@ -11,15 +13,25 @@ class App extends Component{
       squaresArray: [...Array(9).fill(question)],
       question: "question-solid.svg",
       tree: "tree-solid.svg",
-      file: question
+      treasure: "gem-solid.svg",
+      file: question,
+      count: 9,
+      treasureLocation: Math.floor(Math.random() * 9)
     }
   }
 
   handleChange = (index) => {
-    let { squaresArray } = this.state
-    squaresArray[index] = tree
-    console.log(squaresArray);
-    this.setState({squaresArray: squaresArray})
+    let { squaresArray, treasureLocation, count } = this.state
+    this.setState({count: count -= 1})
+    if(index === treasureLocation) {
+      squaresArray[index] = treasure
+      this.setState({squaresArray: squaresArray})
+      alert('YOU WIN!')
+    } else {
+      squaresArray[index] = tree
+      console.log(squaresArray);
+      this.setState({squaresArray: squaresArray})
+    }
   }
 
   render(){
@@ -42,6 +54,9 @@ class App extends Component{
         <div className= "gameBoard">
           { squares }
         </div>
+        <Counter 
+          count = { this.state.count }
+        />
       </React.Fragment>
     )
   }
