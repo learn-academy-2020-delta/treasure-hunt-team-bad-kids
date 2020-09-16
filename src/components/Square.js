@@ -2,13 +2,11 @@ import React, { Component } from 'react'
 
 class Square extends Component{
   render(){
-    let { index } = this.props
-    let { tree } = this.props
-    let { question} = this.props
+    let { index, square } = this.props
     return(
       <React.Fragment>
-        <div className= "square" onClick={ () => { <img src = { question }/> }}>
-          <img src = { tree } />
+        <div className= "square" onClick= {() => this.props.handleChange(index)}>
+          <img src = { square } />
         </div>
       </React.Fragment>
     )

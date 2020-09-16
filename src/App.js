@@ -8,23 +8,30 @@ class App extends Component{
   constructor(props){
     super(props)
     this.state = {
-      squaresArray: [...Array(9).fill("?")],
+      squaresArray: [...Array(9).fill(question)],
       question: "question-solid.svg",
-      tree: "tree-solid.svg"
+      tree: "tree-solid.svg",
+      file: question
     }
   }
 
+  handleChange = (index) => {
+    let { squaresArray } = this.state
+    squaresArray[index] = tree
+    console.log(squaresArray);
+    this.setState({squaresArray: squaresArray})
+  }
 
   render(){
     let { squaresArray } = this.state
-    let boxes = squaresArray.map((box, index) => {
+    let squares = squaresArray.map((square, index) => {
       return (
         <>
         <Square
           index = { index }
           key = { index }
-          tree = { tree }
-          question = { question }
+          handleChange = { this.handleChange }
+          square = { square }
         />
         </>
       )
@@ -33,7 +40,7 @@ class App extends Component{
       <React.Fragment>
         <h1>Treasure Hunt App</h1>
         <div className= "gameBoard">
-          { boxes }
+          { squares }
         </div>
       </React.Fragment>
     )
