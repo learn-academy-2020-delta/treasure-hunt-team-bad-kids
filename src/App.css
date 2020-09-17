@@ -78,7 +78,7 @@ body {
     
     margin: 0 auto;
     background-color: #647382;
-    position: relative; bottom: 600px;
+    position: relative; bottom: 500px;
 }
 /* ? */
 .square {
@@ -93,9 +93,9 @@ body {
 .counter {
     background-image: none;
     justify-content: center;
-    font-size: 75px;
+    font-size: 80px;
     color: whitesmoke;
-    position: relative; right: 575px; bottom: 950px; 
+    position: relative; right: 660px; bottom: 875px; 
 }
 
 /* BUTTON */
@@ -139,7 +139,7 @@ body {
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
 
 button {
-    position: relative; left: 550px; bottom: 1025px;
+    position: relative; left: 650px; bottom: 975px;
     display: inline-block;
     cursor: pointer;
     outline: none;
@@ -220,7 +220,7 @@ h1 {
 	-moz-background-clip: text;
 	-webkit-background-clip: text;
 	text-transform: uppercase;
-    font-size: 220px;
+    font-size: 250px;
     font-stretch: extra-expanded;
     word-spacing: -50px;
     font-weight: bolder;
@@ -261,3 +261,85 @@ line {
 	background-color: #FFF;
 	color: #122;
 } */
+
+/* ##### BRIAN AND JOEL PROJECT! */
+
+
+/* I found James Bosworth's codepen the other day (https://codepen.io/bosworthco/) and saw his work on shifted perspective and wanted to learn how to make it.
+I also found this Youtube video (https://www.youtube.com/watch?v=LgiadQQM6mo&list=PLbu98QxRH81KxxMclY_ZRmm4Dac-n7cSA) which is a great tutorial of the project. Enjoy!
+*/
+
+/* /* html {
+    height: 100%;
+  }
+  
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f1f1;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 250px;
+  }  */
+
+.perspective-text {
+    color: black;
+    font-family: Arial;
+    text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
+    font-size: 58px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+}
+
+.perspective-line {
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+p {
+    
+    margin: 10;
+    height: 100px;
+    line-height: 50px;
+    transition: all 0.5s ease-in-out;
+}
+
+.perspective-line:nth-child(odd) {
+    transform: skew(60deg, -30deg) scaleY(0.667);
+}
+
+.perspective-line:nth-child(even) {
+    transform: skew(0deg, -30deg) scaleY(1.337);
+}
+
+.perspective-text:hover p {
+    transform: translate(0, -50px);
+}
+
+.perspective-line:nth-child(1) {
+    left: 29px;
+}
+
+.perspective-line:nth-child(2) {
+    left: 58px;
+    background: clear;
+}
+
+.perspective-line:nth-child(3) {
+    left: 87px;
+    background: clear;
+}
+
+.perspective-line:nth-child(4) {
+    left: 116px;
+    background: clear;
+}
+
+.perspective-line:nth-child(5) {
+    left: 145px;
+    
+}
