@@ -5,7 +5,7 @@ export default class Counter extends Component {
         let { count } = this.props
         return(
             <>
-            <p>Counter: { count }</p>
+            <p className="counter">Counter: { count }</p>
             </>
         )
     }

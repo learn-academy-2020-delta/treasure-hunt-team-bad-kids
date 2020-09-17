@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import images from './images/background_image.jpg'
 import Square from './components/Square'
 import Button from "./components/Button"
 import tree from './assets/tree-solid.svg'
@@ -46,23 +47,25 @@ class App extends Component{
           index = { index }
           key = { index }
           handleChange = { this.handleChange }
-          square = { square }
+          square = { square } 
         />
         </>
       )
     })
     return(
       <React.Fragment>
-        <h1>Treasure Hunt App</h1>
+  
         <div className= "gameBoard" >
           { squares }
         </div>
+        
         <Counter 
           count = { this.state.count }
         />
         <Button
-
+        
         />
+        
       </React.Fragment>
     )
   }

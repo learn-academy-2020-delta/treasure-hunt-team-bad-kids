@@ -1,22 +1,263 @@
-body {
-    margin: 1em;
-    text-align: center;
+*
+{
+    background-image: url(./images/background_image.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inconsolata', monospace;
 }
 
+/* MAIN BODY */
+body {
+    
+    margin: 1em;
+    text-align: center;
+    align-items: center;
+    min-height: 100vh;
+}
+/* FUN WITH WAVY */
+
+.wavy {
+    background-image: none;
+    position: relative;
+    -webkit-box-reflect: below -12px linear-gradient(
+        transparent, rbga(0,0,0,0.2));
+}
+.wavy span
+{
+    background-image: none;
+    position: relative;
+    display: inline-block;
+    color: whitesmoke;
+    font-size: 1em;
+    text-transform: uppercase;
+    animation: animate 1s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes animate
+{
+    0%
+    {
+        transform: translateY(0px);
+    }
+    20%
+    {
+        transform: translateY(-20px);
+    }
+    40%, 100%
+    {
+        transform: translateY(0px);
+    }
+}
+
+/* TITLE */
+.title{
+    margin: 0;
+    padding: 0;
+    font-family: consolas;
+    color: whitesmoke;
+    justify-content: center;
+    font-size: 120px;
+    font-weight: 100;
+    position: relative; bottom: 300px;
+}
+
+/* GAME BOARD */
 .gameBoard {
+    /* background-image: none; */
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    height: 300px;
-    width: 300px;
-    border: 5px solid black;
+    height: 650px;
+    width: 650px;
+    border: 15px solid whitesmoke;
+    box-shadow:20px 20px 10px black;
+    
     margin: 0 auto;
     background-color: #647382;
+    position: relative; bottom: 600px;
 }
+/* ? */
 .square {
     display: flex;
-    height: 100px;
-    width: 100px;
+    height: 190px;
+    width: 210px;
     align-items: center;
     justify-content: center;
-    font-size: 90px;
 }
+
+/* COUNTER */
+.counter {
+    background-image: none;
+    justify-content: center;
+    font-size: 75px;
+    color: whitesmoke;
+    position: relative; right: 575px; bottom: 950px; 
+}
+
+/* BUTTON */
+/* .button {
+    background-image: none;
+    margin: 1em;
+    height: 170px;
+    width: 390px;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid grey;
+    color: black;
+    font-size: 50px;
+    position: relative; left: 660px; bottom: 640px;
+} */
+
+/* ##### STUPID SPACES ##### */
+.stupid {
+    opacity: 0;
+}
+
+/* BACKGROUND IMAGE */
+.container {
+    background-image: url(./images/background_image.jpg);
+}
+
+
+/* TESTING AREA */
+
+/* ##### BUTTONS ##### */
+
+:root {
+    --backgroundColor: rgba(246, 241, 209);
+    --colorShadeA: rgb(1, 1, 1);
+    --colorShadeB: rgb(27, 27, 27);
+    --colorShadeC: rgb(59, 59, 59);
+    --colorShadeD: rgb(124, 124, 124);
+    --colorShadeE: rgb(195, 195, 195);
+}
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+
+button {
+    position: relative; left: 550px; bottom: 1025px;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color:var(--colorShadeA);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: inherit;
+}
+
+button.big-button {
+    padding: 1em 2em;
+    border: 2px solid var(--colorShadeA);
+    border-radius: 1em;
+    background: var(--colorShadeE);
+    transform-style: preserve-3d;
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+button.big-button::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--colorShadeC);
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.75em 0 0 var(--colorShadeA);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+button.big-button:hover {
+    background: var(--colorShadeD);
+    transform: translate(0, 0.375em);
+}
+button.big-button:hover::before {
+    transform: translate3d(0, 0.75em, -1em);
+}
+
+button.big-button:active {
+    transform: translate(0em, 0.75em);
+}
+
+button.big-button:active::before {
+    transform: translate3d(0, 0, -1em);
+
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
+}
+
+/* ##### TITLE ##### */
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+body {
+	background-color: #111;
+}
+
+.title {
+	font-family: "Montserrat";
+	text-align: center;
+	color: #FFF;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+    height: 100vh;
+	letter-spacing: 10px;
+}
+
+h1 {
+    background-image: url(https://media.giphy.com/media/l1J9E0SXgz6uESSgU/giphy.gif);
+    /* https://media.giphy.com/media/3oKIPpPTXhKjcIK7hS/giphy.gif ^^^ will work if that one doesnt */
+	background-size: cover;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+    font-size: 220px;
+    font-stretch: extra-expanded;
+    word-spacing: -50px;
+    font-weight: bolder;
+	line-height: .75;
+	margin: 2px 0;
+}
+
+line {
+    background-image: url(https://media.giphy.com/media/26FPGJrU6MQHfwhtC/giphy.gif);
+	background-size: cover;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+    font-size: 220px;
+    font-stretch: extra-expanded;
+    word-spacing: -50px;
+    font-weight: bolder;
+	line-height: .75;
+	margin: 2px 0;
+}
+/* styling my button */
+
+/* .white-mode {
+	text-decoration: none;
+	padding: 7px 10px;
+	background-color: #122;
+	border-radius: 3px;
+	color: #FFF;
+	transition: .35s ease-in-out;
+	position: absolute;
+	left: 15px;
+	bottom: 15px;
+	font-family: "Montserrat";
+}
+
+.white-mode:hover {
+	background-color: #FFF;
+	color: #122;
+} */
