@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import images from './images/background_image.jpg'
+// import images from './images/background_image.jpg'
 import Square from './components/Square'
 import Button from "./components/Button"
 import tree from './assets/tree-solid.svg'

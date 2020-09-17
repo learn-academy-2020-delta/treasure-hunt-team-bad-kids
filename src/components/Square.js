@@ -6,7 +6,7 @@ class Square extends Component{
     return(
       <React.Fragment>
         <div className= "square" onClick= {() => this.props.handleChange(index)}>
-          <img src = { square } />
+          <img src= { square } alt={""}/>
         </div>
       </React.Fragment>
     )
